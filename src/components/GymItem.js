@@ -11,6 +11,8 @@ function GymItem({ gym }) {
         Location: {gym.address1}, {gym.address2}, {gym.city}, {gym.state},
         {gym.pin}, {gym.country}
       </p>
+      <p>Owner: {gym.name}</p>
+      <p>Rating: {gym.rating}</p>
       <p>Description: {gym.description}</p>
       
       
