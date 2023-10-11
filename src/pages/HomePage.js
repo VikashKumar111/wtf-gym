@@ -3,13 +3,18 @@ import Header from "../components/Header";
 import GymList from "../components/GymList";
 import Perks from "../components/Perks";
 import Footer from "../components/Footer";
+import LocationFilter from "../components/LocationFilter";
+import FeaturesFilter from "../components/FeaturesFilter";
+import DistanceFilter from "../components/DistanceFilter";
+
 
 
 
 const HomePage = () => {
   const [gyms, setGyms] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [locationFilter, setLocationFilter] = useState('');
+  const [featureFilter, setFeatureFilter] = useState([]);
+  const [distanceFilter, setDistanceFilter] = useState(0);
 
 
   useEffect(() => {
@@ -17,12 +22,14 @@ const HomePage = () => {
       .then((response) => response.json())
       .then((data) => {
         setGyms(data.data);
-        setLoading(false);
+        console.log(data.data)
       })
       .catch((error) => {
-        setError(error);
-        setLoading(false);
+        console.log(error.message)
       });
+    
+    
+   
   }, []);
 
 
@@ -31,9 +38,17 @@ const HomePage = () => {
     <div>
       <Header />
       <h1>Gym Website</h1>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error.message}</p>}
-      {!loading && !error && <GymList gyms={gyms} />}
+      <LocationFilter location={locationFilter} onLocationChange={(e) => setLocationFilter(e.target.value)} />
+      <FeaturesFilter onFeatureChange={(e) => {
+        const feature = e.target.value;
+        if (featureFilter.includes(feature)) {
+          setFeatureFilter(featureFilter.filter((f) => f !== feature));
+        } else {
+          setFeatureFilter([...featureFilter, feature]);
+        }
+      }} />
+      <DistanceFilter distance={distanceFilter} onDistanceChange={(e) => setDistanceFilter(e.target.value)} />
+      <GymList gyms={gyms} />
       {/* <Perks/> */}
       <Footer />
     </div>

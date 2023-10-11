@@ -1,12 +1,26 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import GymItem from './GymItem';
 
 const GymList = ({ gyms }) => {
+  const [locationFilter, setLocationFilter] = useState('');
+  const [filteredGyms, setFilteredGyms] = useState([]);
+  const filtered = gyms.filter((gym) => {
+      // Apply your filters here
+      let locationMatch = gym.city.toLowerCase().includes(locationFilter.toLowerCase());
+      
+
+    return locationMatch;
+    setLocationFilter(locationMatch);
+    setFilteredGyms(filtered);
+    });
+
+    
+  console.log(filteredGyms)
   return (
     <div>
-      {gyms.map((gym) => (
-        <GymItem key={gym.user_id} gym={gym} />
+      {filteredGyms.map((filteredGym) => (
+        <GymItem key={filteredGym.user_id} gym={filteredGym} />
       ))}
     </div>
   );

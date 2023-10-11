@@ -1,19 +1,19 @@
 import React from 'react';
 
-function GymItem({ gym }) {
+function GymItem({filteredGym }) {
 
-  
+  console.log(filteredGym);
   return (
     <div className="item">
-      <h2>{gym.gym_name}</h2>
-      <img src={ gym.gallery.images} alt='' />
+      <h2>{filteredGym.gym_name}</h2>
+      <img src={ filteredGym.gallery.images} alt='' />
       <p>
-        Location: {gym.address1}, {gym.address2}, {gym.city}, {gym.state},
-        {gym.pin}, {gym.country}
+        Location: {filteredGym.address1}, {filteredGym.address2}, {filteredGym.city}, {filteredGym.state},
+        {filteredGym.pin}, {filteredGym.country}
       </p>
-      <p>Owner: {gym.name}</p>
-      <p>Rating: {gym.rating}</p>
-      <p>Description: {gym.description}</p>
+      <p>Owner: {filteredGym.name}</p>
+      <p>Rating: {filteredGym.rating}</p>
+      <p>Description: {filteredGym.description}</p>
       
       
       
