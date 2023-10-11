@@ -2,21 +2,17 @@
     background-color: black;
     align-items: center;
     background: transparent;
-    
-    display: flex;
-    justify-content: space-between;
-    
-
-    
-   
-    
 }
 
 .header_navbar{
     position: absolute;
     top: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+   
     
 
     
@@ -25,20 +21,26 @@
     margin-left: 37px;
     padding-top: 10px;
     padding-bottom: 7px;
+    padding-left: 15px;
     height: 26px;
-        width: 57px;
+    width: 57px;
 }
 
 
 
 
+.header__nav {
 
+    margin-right: 27px;
+
+}
 
 .header__nav a{
     
-        color: yellow;
+        color: white;
         text-decoration:none;
         margin: 0 20px;
         font-size: 18px;
+        padding: 0 8px;
     
 }

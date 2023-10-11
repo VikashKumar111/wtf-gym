@@ -1,14 +1,22 @@
 import React from 'react';
 import GymItem from './GymItem';
 
-function GymList({ gyms }) {
+function GymList({ gyms, locationFilter, selectedFeatures, distanceFilter }) {
+  console.log(gyms)
   return (
     <div className="gym-list">
-      {gyms.map((gym) => (
+      
+         {gyms.map(({ gym }) => (
         
-        <GymItem key={gym.user_id} gym={gym} />
-      ))}
+          < GymItem key = { gym.user_id } gym = { gym } />
+        ))}
+      
+      
+        
+    
     </div>
+    
+    
   );
 }
 
