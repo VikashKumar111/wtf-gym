@@ -1,0 +1,47 @@
+.footer {
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+
+
+
+.footer__content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer__logo img {
+    margin-left: 37px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+}
+
+.footer__logoimage {
+    height: 26px;
+    width: 57px;
+
+}
+
+.footer-links{
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 5px 0;
+    
+}
+
+.footer-links a{
+      text-decoration: none;
+      color: white;
+}

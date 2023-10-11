@@ -1,0 +1,30 @@
+.header{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+}
+
+.header__logo img {
+    margin-left: 37px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+}
+
+.header__logoimage{
+    height: 26px;
+    width: 57px;
+    
+}
+
+.header__nav a{
+    
+        color: #fff;
+        text-decoration:none;
+        margin: 0 20px;
+        font-size: 18px;
+    
+}
