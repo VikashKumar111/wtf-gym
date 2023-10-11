@@ -22,10 +22,10 @@ const HomePage = () => {
 
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       <GymList gyms={gyms} />
       {/* <Perks/> */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

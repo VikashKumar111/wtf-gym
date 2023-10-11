@@ -1,28 +1,42 @@
 .header{
     background-color: black;
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    position: relative;
-    z-index: 1;
     background: transparent;
+    
+    display: flex;
+    justify-content: space-between;
+    
+
+    
+   
+    
 }
 
+.header_navbar{
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    
+
+    
+}
 .header__logo img {
     margin-left: 37px;
     padding-top: 10px;
     padding-bottom: 7px;
+    height: 26px;
+        width: 57px;
 }
 
-.header__logoimage{
-    height: 26px;
-    width: 57px;
-    
-}
+
+
+
+
 
 .header__nav a{
     
-        color: #fff;
+        color: yellow;
         text-decoration:none;
         margin: 0 20px;
         font-size: 18px;

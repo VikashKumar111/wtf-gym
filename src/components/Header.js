@@ -5,11 +5,11 @@ import Banner from "./Banner";
 const Header = () => {
   return (
     <div>
-      <div>
-        <header className="header">
+      <Banner />
+      <header className="header">
+        <div className="header_navbar">
           <div className="header__logo">
             <img
-              className="header__logoimage"
               src="https://wtfup.me/assets/public/logo-final-white-214@2x.png"
               alt=""
             />
@@ -21,9 +21,8 @@ const Header = () => {
             <a href="#">Become WTF Partner</a>
             <a href="#">Login</a>
           </nav>
-        </header>
-      </div>
-      <Banner />
+        </div>
+      </header>
     </div>
   );
 };
