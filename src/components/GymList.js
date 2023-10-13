@@ -1,27 +1,36 @@
 
 import React, { useState } from 'react';
-import GymItem from './GymItem';
+// import GymItem from './GymItem';
 
 const GymList = ({ gyms }) => {
-  const [locationFilter, setLocationFilter] = useState('');
-  const [filteredGyms, setFilteredGyms] = useState([]);
-  const filtered = gyms.filter((gym) => {
-      // Apply your filters here
-      let locationMatch = gym.city.toLowerCase().includes(locationFilter.toLowerCase());
-      
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredGyms, setFilteredGyms] = useState([gyms]);
+  
+  const handleSearch = (e) => {
+    const searchValue = e.target.value;
+    setSearchTerm(searchValue);
 
-    return locationMatch;
-    setLocationFilter(locationMatch);
+    // Filter the data based on the search term
+    const filtered = gyms.filter((gym) =>
+      gym.city.toLowerCase().includes(searchValue.toLowerCase())
+    );
+
     setFilteredGyms(filtered);
-    });
-
+  };
     
-  console.log(filteredGyms)
+
   return (
     <div>
-      {filteredGyms.map((filteredGym) => (
-        <GymItem key={filteredGym.user_id} gym={filteredGym} />
+      <input type="text" placeholder="Search" value={searchTerm} onChange={handleSearch} />
+      {gyms.map((gym) =>(
+        <li>{gym.gym_name}</li>
       ))}
+       {filteredGyms.map((filteredGym) =>(
+        <li>{filteredGym.gym_name}</li>
+      ))}
+      
+        
+      
     </div>
   );
 };

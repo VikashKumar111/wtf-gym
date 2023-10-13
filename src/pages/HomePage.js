@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import GymList from "../components/GymList";
 import Perks from "../components/Perks";
 import Footer from "../components/Footer";
-import LocationFilter from "../components/LocationFilter";
 import FeaturesFilter from "../components/FeaturesFilter";
 import DistanceFilter from "../components/DistanceFilter";
 
@@ -12,7 +11,6 @@ import DistanceFilter from "../components/DistanceFilter";
 
 const HomePage = () => {
   const [gyms, setGyms] = useState([]);
-  const [locationFilter, setLocationFilter] = useState('');
   const [featureFilter, setFeatureFilter] = useState([]);
   const [distanceFilter, setDistanceFilter] = useState(0);
 
@@ -38,7 +36,6 @@ const HomePage = () => {
     <div>
       <Header />
       <h1>Gym Website</h1>
-      <LocationFilter location={locationFilter} onLocationChange={(e) => setLocationFilter(e.target.value)} />
       <FeaturesFilter onFeatureChange={(e) => {
         const feature = e.target.value;
         if (featureFilter.includes(feature)) {
