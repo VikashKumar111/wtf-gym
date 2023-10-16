@@ -1,11 +1,13 @@
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import DistanceFilter from "./DistanceFilter";
+import FeaturesFilter from "./FeaturesFilter";
+import "./GymList.css";
 // import GymItem from './GymItem';
 
 const GymList = ({ gyms }) => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredGyms, setFilteredGyms] = useState([gyms]);
-  
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredGyms, setFilteredGyms] = useState(gyms);
+
   const handleSearch = (e) => {
     const searchValue = e.target.value;
     setSearchTerm(searchValue);
@@ -17,23 +19,26 @@ const GymList = ({ gyms }) => {
 
     setFilteredGyms(filtered);
   };
-    
 
   return (
-    <div>
-      <input type="text" placeholder="Search" value={searchTerm} onChange={handleSearch} />
-      {gyms.map((gym) =>(
-        <li>{gym.gym_name}</li>
-      ))}
-       {filteredGyms.map((filteredGym) =>(
-        <li>{filteredGym.gym_name}</li>
-      ))}
-      
-        
-      
+    <div className="gym_list">
+      <div>
+        <input
+          type="text"
+          placeholder="Search"
+          value={searchTerm}
+          onChange={handleSearch}
+        />
+        <FeaturesFilter />
+        <DistanceFilter />
+      </div>
+      <div>
+        {filteredGyms.map((gym) => (
+          <li>{gym.gym_name}</li>
+        ))}
+      </div>
     </div>
   );
 };
 
 export default GymList;
-

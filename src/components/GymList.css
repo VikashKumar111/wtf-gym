@@ -1,4 +1,6 @@
 
-.gym-list{
+.gym_list{
     background-color: aqua;
+    display: flex;
+    justify-content: space-between;
 }

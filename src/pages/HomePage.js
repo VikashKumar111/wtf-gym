@@ -36,15 +36,6 @@ const HomePage = () => {
     <div>
       <Header />
       <h1>Gym Website</h1>
-      <FeaturesFilter onFeatureChange={(e) => {
-        const feature = e.target.value;
-        if (featureFilter.includes(feature)) {
-          setFeatureFilter(featureFilter.filter((f) => f !== feature));
-        } else {
-          setFeatureFilter([...featureFilter, feature]);
-        }
-      }} />
-      <DistanceFilter distance={distanceFilter} onDistanceChange={(e) => setDistanceFilter(e.target.value)} />
       <GymList gyms={gyms} />
       {/* <Perks/> */}
       <Footer />
