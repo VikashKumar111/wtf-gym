@@ -1,44 +1,30 @@
-import React, { useState } from "react";
-import DistanceFilter from "./DistanceFilter";
-import FeaturesFilter from "./FeaturesFilter";
-import "./GymList.css";
+import React from "react";
+// import DistanceFilter from "./DistanceFilter";
+// import FeaturesFilter from "./FeaturesFilter";
+// import LocationFilter from "./LocationFilter";
+// import CategoryFilter from "./CategoryFilter";
+
 // import GymItem from './GymItem';
+export const GymList = ({ gyms }) => {
+   
+   
 
-const GymList = ({ gyms }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filteredGyms, setFilteredGyms] = useState(gyms);
+   
 
-  const handleSearch = (e) => {
-    const searchValue = e.target.value;
-    setSearchTerm(searchValue);
-
-    // Filter the data based on the search term
-    const filtered = gyms.filter((gym) =>
-      gym.city.toLowerCase().includes(searchValue.toLowerCase())
+    return (
+        <div className="gym_list">
+            <div>
+                {/* <LocationFilter/> */}
+                {/* <CategoryFilter products={gyms}/> */}
+                {/* <FeaturesFilter /> */}
+                {/* <DistanceFilter /> */}
+            </div>
+            <div>
+                {gyms.map((gym) => (
+                    <li>{gym.gym_name} , {gym.address1}, {gym.address2}, {gym.city}, {gym.country}, {gym.description},{gym.distance},{gym.cover_image},{gym.gallery.images}</li>
+                ))}
+            </div>
+        </div>
     );
-
-    setFilteredGyms(filtered);
-  };
-
-  return (
-    <div className="gym_list">
-      <div>
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchTerm}
-          onChange={handleSearch}
-        />
-        <FeaturesFilter />
-        <DistanceFilter />
-      </div>
-      <div>
-        {filteredGyms.map((gym) => (
-          <li>{gym.gym_name}</li>
-        ))}
-      </div>
-    </div>
-  );
 };
-
 export default GymList;

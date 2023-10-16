@@ -11,6 +11,7 @@ import DistanceFilter from "../components/DistanceFilter";
 
 const HomePage = () => {
   const [gyms, setGyms] = useState([]);
+   const [places, setPlaces] = useState("");
   const [featureFilter, setFeatureFilter] = useState([]);
   const [distanceFilter, setDistanceFilter] = useState(0);
 
@@ -25,10 +26,20 @@ const HomePage = () => {
       .catch((error) => {
         console.log(error.message)
       });
-    
-    
-   
   }, []);
+  
+
+    useEffect(() => {
+    fetch('https://devapi.wtfup.me/gym/places')
+      .then((response) => response.json())
+      .then((data) => {
+        setPlaces(data.data);
+        console.log(data.data)
+      })
+      .catch((error) => {
+        console.log(error.message)
+      });
+    }, []);
 
 
 
