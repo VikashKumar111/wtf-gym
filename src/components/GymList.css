@@ -3,4 +3,7 @@
     background-color: aqua;
     display: flex;
     justify-content: space-between;
+    /* margin-bottom: 700px; */
+    position: relative;
+    bottom: 100px;
 }
