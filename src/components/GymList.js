@@ -5,23 +5,24 @@ import FeaturesFilter from "./FeaturesFilter";
 import LocationFilter from "./LocationFilter";
 import CategoryFilter from "./CategoryFilter";
 
-// import GymItem from './GymItem';
-export const GymList = ({ gyms }) => {
-  console.log(gyms);
+const GymList = () => {
   return (
     <div className="gym_list">
-      <div>
+      <div className="filters">
         <LocationFilter />
-        <CategoryFilter products={gyms} />
+        <CategoryFilter />
         <FeaturesFilter />
         <DistanceFilter />
       </div>
-      <div>
-        {gyms.map((gym) => (
+      {/* <div className="gym-items">
+        {gyms?.map((gym) => (
           <div key={gym.id} className="gym_item">
             <img
-              src="https://i.pinimg.com/564x/d5/a8/05/d5a805871f757157192ab1020081fd05.jpg"
-              alt="image"
+              src={
+                gym.image ||
+                "https://i.pinimg.com/564x/d5/a8/05/d5a805871f757157192ab1020081fd05.jpg"
+              }
+              alt="Gym Pictures"
               className="gym_image"
             />
             <div className="gym_info">
@@ -37,8 +38,9 @@ export const GymList = ({ gyms }) => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
+
 export default GymList;
