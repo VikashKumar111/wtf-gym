@@ -1,25 +1,26 @@
 import React from "react";
 import "./GymList.css";
-// import DistanceFilter from "./DistanceFilter";
-// import FeaturesFilter from "./FeaturesFilter";
-// import LocationFilter from "./LocationFilter";
-// import CategoryFilter from "./CategoryFilter";
+import DistanceFilter from "./DistanceFilter";
+import FeaturesFilter from "./FeaturesFilter";
+import LocationFilter from "./LocationFilter";
+import CategoryFilter from "./CategoryFilter";
 
 // import GymItem from './GymItem';
 export const GymList = ({ gyms }) => {
+  console.log(gyms);
   return (
     <div className="gym_list">
       <div>
-        {/* <LocationFilter/> */}
-        {/* <CategoryFilter products={gyms}/> */}
-        {/* <FeaturesFilter /> */}
-        {/* <DistanceFilter /> */}
+        <LocationFilter />
+        <CategoryFilter products={gyms} />
+        <FeaturesFilter />
+        <DistanceFilter />
       </div>
       <div>
         {gyms.map((gym) => (
           <div key={gym.id} className="gym_item">
             <img
-              src="https://i.pinimg.com/564x/c1/da/58/c1da586510db186fa1af573219c224cd.jpg"
+              src="https://i.pinimg.com/564x/d5/a8/05/d5a805871f757157192ab1020081fd05.jpg"
               alt="image"
               className="gym_image"
             />
